@@ -12,18 +12,18 @@ const supabaseUrl = 'https://yryrzmcfkwklywykoevq.supabase.co'
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlyeXJ6bWNma3drbHl3eWtvZXZxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA3MjMxOTUsImV4cCI6MjAyNjI5OTE5NX0.EUo0LxitPyAIL60ZWgNl4J69gSYsQCTXq-U5yrvoBbQ'
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-function hexToRgb(hex) {
-  // Remove the leading hash if present
-  hex = hex.replace(/^#/, '');
+// function hexToRgb(hex) {
+//   // Remove the leading hash if present
+//   hex = hex.replace(/^#/, '');
 
-  // Parse the hex color code into RGB components
-  let r = parseInt(hex.substring(0, 2), 16);
-  let g = parseInt(hex.substring(2, 4), 16);
-  let b = parseInt(hex.substring(4, 6), 16);
+//   // Parse the hex color code into RGB components
+//   let r = parseInt(hex.substring(0, 2), 16);
+//   let g = parseInt(hex.substring(2, 4), 16);
+//   let b = parseInt(hex.substring(4, 6), 16);
 
-  // Return the RGB color as a string in the format "r-g-b"
-  return `${r}-${g}-${b}`;
-}
+//   // Return the RGB color as a string in the format "r-g-b"
+//   return `${r}-${g}-${b}`;
+// }
 
 function App() {
   let [data, setData] = useState([]); // Define setData using useState
