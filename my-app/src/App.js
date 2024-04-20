@@ -88,7 +88,7 @@ function App() {
   </div>
   `;
 
-  const rgbColor = hexToRgb("FFFFFF");
+  //const rgbColor = hexToRgb("FFFFFF");
   //fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
   fetch(`https://api.qr-code-generator.com/v1/create?access-token=nfTbWNKlJp2UPPe0-N5qKmw3ckuGai7ANoqxUQH7rMzv8sk8nv2zvb-Za4j1yujZ`)
   .then(response => response.url)
