@@ -122,14 +122,13 @@ setBusinessCard(businessCardHTML);
     if (!response.ok) {
       throw new Error('Failed to fetch QR code');
     }
-    // Return the response as JSON
-    return response.json();
+    return response.blob();
   })
   .then(data => {
     // Extract the QR code image URL from the response data
     console.log(data);
 
-    const qrCodeImageUrl = data.url; // Replace 'url' with the actual property name in the response data
+    const qrCodeImageUrl = URL.createObjectURL(qrCodeBlob);
 
     // Generate the back side of the business card HTML with the QR code image
     let businessCardBackHTML;
