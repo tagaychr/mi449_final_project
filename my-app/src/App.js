@@ -151,7 +151,7 @@ setBusinessCard(businessCardHTML);
       `;
     }
 
-    // Now you can use the businessCardBackHTML as needed, for example, set it in state or append it to the DOM
+    setBusinessCardBack(businessCardBackHTML);
   })
   .catch(error => {
     console.error('Error generating QR code:', error);
