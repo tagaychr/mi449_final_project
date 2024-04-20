@@ -196,14 +196,39 @@ body {
   animation: swirl 30s linear infinite;
 }
 
-#Simple{
-  color: #fff;
+#Sunset{
+  color: #231200;
   background: radial-gradient(
     circle,
-    #100b20 20%,
-    #19133a 40%,
-    #201853 60%,
-    #281f6d 80%,
-    #302787 100%
+    #ffc57a 20%,
+    #ffe4a0 40%,
+    #ffdd53 60%,
+    #ffc36a 80%,
+    #ffbf51 100%
+  );
+}
+
+#Simple{
+  color: #000000;
+  background: radial-gradient(
+    circle,
+    #7d7d7d 20%,
+    #d7d7d7 40%,
+    #646464 60%,
+    #b3b3b3 80%,
+    #c5c5c5 100%
+  );
+}
+
+
+#Glow{
+  color: #000000;
+  background: radial-gradient(
+    circle,
+    #fbfffb 20%,
+    #d4ffd6 40%,
+    #afffb3 60%,
+    #7aff81 80%,
+    #1bff26 100%
   );
 }
