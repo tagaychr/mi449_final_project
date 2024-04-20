@@ -89,7 +89,7 @@ function App() {
   `;
 
   const rgbColor = hexToRgb("FFFFFF");
-  fetch(`http://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
+  fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
   .then(response => response.url)
   .then(qrCodeImageUrl => {
     // Generate the back side of the business card HTML with the QR code image
