@@ -94,23 +94,36 @@ function App() {
   .then(response => response.url)
   .then(qrCodeImageUrl => {
     // Generate the back side of the business card HTML with the QR code image
-    const businessCardBackHTML = `
-      <div id="${selectedTheme.name}" class="business-card-back" ">
-        <img src="${qrCodeImageUrl}" alt="QR Code" />
-      </div>
-    `;
-    setBusinessCardBack(businessCardBackHTML);
-  })
-  .catch(error => {
-    console.error('Error generating QR code:', error);
-    // Handle error if necessary
-  });
+    let businessCardBackHTML;
 
-  // Update state to display the generated business card
-  setBusinessCard(businessCardHTML);
-  // setBusinessCardBack(businessCardBackHTML);
-  };
-  
+    if (selectedTheme.name.includes(' ')) {
+      // If there is a space in selectedTheme.name
+      const idWithoutSpace = selectedTheme.name.slice(0, selectedTheme.name.indexOf(' '));
+      businessCardBackHTML = `
+        <div id="${idWithoutSpace}" class="business-card-back" ">
+          <img src="${qrCodeImageUrl}" alt="QR Code" />
+        </div>
+      `;
+    } else {
+      // If there is no space in selectedTheme.name
+      businessCardBackHTML = `
+        <div id="${selectedTheme.name}" class="business-card-back" ">
+          <img src="${qrCodeImageUrl}" alt="QR Code" />
+        </div>
+      `;
+    }
+        setBusinessCardBack(businessCardBackHTML);
+      })
+      .catch(error => {
+        console.error('Error generating QR code:', error);
+        // Handle error if necessary
+      });
+
+      // Update state to display the generated business card
+      setBusinessCard(businessCardHTML);
+      // setBusinessCardBack(businessCardBackHTML);
+      };
+      
   return (
     <div className="container">
       <div className="row">
