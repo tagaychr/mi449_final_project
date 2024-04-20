@@ -1,6 +1,9 @@
 import './App.css';
 import './data.js'; // Import data.js
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import React, { useState, useEffect } from 'react';
 
 // import { createClient } from 'https://cdn.skypack.dev/@supabase/supabase-js';
