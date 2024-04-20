@@ -128,7 +128,7 @@ setBusinessCard(businessCardHTML);
     // Extract the QR code image URL from the response data
     console.log(data);
 
-    const qrCodeImageUrl = URL.createObjectURL(qrCodeBlob);
+    const qrCodeImageUrl = URL.createObjectURL(data);
 
     // Generate the back side of the business card HTML with the QR code image
     let businessCardBackHTML;
