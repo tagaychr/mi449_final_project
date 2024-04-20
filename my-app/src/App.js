@@ -122,6 +122,8 @@ setBusinessCard(businessCardHTML);
     // Generate the back side of the business card HTML with the QR code image
     let businessCardBackHTML;
 
+    console.log("API CALL SUCESS", qrCodeImageUrl);
+
     if (selectedTheme.name.includes(' ')) {
       // If there is a space in selectedTheme.name
       const idWithoutSpace = selectedTheme.name.slice(0, selectedTheme.name.indexOf(' '));
