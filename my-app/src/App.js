@@ -78,8 +78,8 @@ function App() {
     </div>
     <div class="bottom-half">
       <div class="contact-info">
-          <p>${email}</p>
-          <p>${number}</p>
+          <p>${email} </p>
+          <p> ${number}</p>
       </div>
       <div class="bio">
           <p><em>${bio}</em></p>
