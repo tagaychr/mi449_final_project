@@ -117,39 +117,47 @@ setBusinessCard(businessCardHTML);
   //const rgbColor = hexToRgb("FFFFFF");
   //fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
   fetch(`https://api.qr-code-generator.com/v1/create?access-token=nfTbWNKlJp2UPPe0-N5qKmw3ckuGai7ANoqxUQH7rMzv8sk8nv2zvb-Za4j1yujZ`)
-  .then(response => response.url)
-  .then(qrCodeImageUrl => {
+  .then(response => {
+    // Check if the response is successful
+    if (!response.ok) {
+      throw new Error('Failed to fetch QR code');
+    }
+    // Return the response as JSON
+    return response.json();
+  })
+  .then(data => {
+    // Extract the QR code image URL from the response data
+    console.log(data);
+
+    const qrCodeImageUrl = data.url; // Replace 'url' with the actual property name in the response data
+
     // Generate the back side of the business card HTML with the QR code image
     let businessCardBackHTML;
-
-    console.log("API CALL SUCESS", qrCodeImageUrl);
 
     if (selectedTheme.name.includes(' ')) {
       // If there is a space in selectedTheme.name
       const idWithoutSpace = selectedTheme.name.slice(0, selectedTheme.name.indexOf(' '));
       businessCardBackHTML = `
-        <div id="${idWithoutSpace}" class="business-card-back" ">
+        <div id="${idWithoutSpace}" class="business-card-back">
           <img src="${qrCodeImageUrl}" alt="QR Code" />
         </div>
       `;
     } else {
       // If there is no space in selectedTheme.name
       businessCardBackHTML = `
-        <div id="${selectedTheme.name}" class="business-card-back" ">
+        <div id="${selectedTheme.name}" class="business-card-back">
           <img src="${qrCodeImageUrl}" alt="QR Code" />
         </div>
       `;
     }
-        setBusinessCardBack(businessCardBackHTML);
-      })
-      .catch(error => {
-        console.error('Error generating QR code:', error);
-        // Handle error if necessary
-      });
 
-      // Update state to display the generated business card
-      setBusinessCard(businessCardHTML);
-      // setBusinessCardBack(businessCardBackHTML);
+    // Now you can use the businessCardBackHTML as needed, for example, set it in state or append it to the DOM
+  })
+  .catch(error => {
+    console.error('Error generating QR code:', error);
+    // Handle error if necessary
+  });
+
       };
       
   return (
