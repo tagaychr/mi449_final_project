@@ -73,22 +73,44 @@ function App() {
   // Generate the business card HTML using the form inputs and selected theme
   let businessCardHTML;
 
-  if (selectedTheme.name.includes(' ')) {
-    // If there is a space in selectedTheme.name
-    const idWithoutSpace = selectedTheme.name.slice(0, selectedTheme.name.indexOf(' '));
-    businessCardHTML = `
-      <div id="${idWithoutSpace}" class="business-card">
-        <!-- Your business card content goes here -->
+if (selectedTheme.name.includes(' ')) {
+  // If there is a space in selectedTheme.name
+  const idWithoutSpace = selectedTheme.name.slice(0, selectedTheme.name.indexOf(' '));
+  businessCardHTML = `
+    <div id="${idWithoutSpace}" class="business-card">
+      <div class="top-half">
+        <h2>${firstName} ${lastName}</h2>
       </div>
-    `;
-  } else {
-    // If there is no space in selectedTheme.name
-    businessCardHTML = `
-      <div id="${selectedTheme.name}" class="business-card">
-        <!-- Your business card content goes here -->
+      <div class="bottom-half">
+        <div class="contact-info">
+            <p>${email} </p>
+            <p> ${number}</p>
+        </div>
+        <div class="bio">
+            <p><em>${bio}</em></p>
+        </div>
       </div>
-    `;
-  }
+    </div>
+  `;
+} else {
+  // If there is no space in selectedTheme.name
+  businessCardHTML = `
+    <div id="${selectedTheme.name}" class="business-card">
+      <div class="top-half">
+        <h2>${firstName} ${lastName}</h2>
+      </div>
+      <div class="bottom-half">
+        <div class="contact-info">
+            <p>${email} </p>
+            <p> ${number}</p>
+        </div>
+        <div class="bio">
+            <p><em>${bio}</em></p>
+        </div>
+      </div>
+    </div>
+  `;
+}
 
 setBusinessCard(businessCardHTML);
 
