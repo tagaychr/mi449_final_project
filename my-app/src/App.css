@@ -185,6 +185,7 @@ body {
 #Galaxy{
   color:#fff;
   font-family: 'Courier New', monospace;
+  font-weight: bold;
 
   background: radial-gradient(
     circle,
@@ -199,6 +200,7 @@ body {
 
 #Sunset{
   color: #FF6F61;
+  font-family: cursive;
   background: radial-gradient(
     circle,
     #ffc57a 20%,
@@ -210,7 +212,7 @@ body {
 }
 
 #Simple{
-  font-family: cursive;
+  
   color: #000000;
   background: linear-gradient(
     to right,
@@ -225,6 +227,7 @@ body {
 
 #Glow{
   font-family: 'Courier New', monospace;
+  font-weight: bold;
   color: #204244;
   background: radial-gradient(
     circle,
