@@ -162,6 +162,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .bottom-half {
