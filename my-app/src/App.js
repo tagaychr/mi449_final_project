@@ -123,7 +123,7 @@ if (selectedTheme.name.includes(' ')) {
     // Generate the back side of the business card HTML with the QR code image
     const businessCardBackHTML = `
       <div id="${selectedTheme.name}" class="business-card-back" ">
-        <img src="${qrCodeImageUrl}" alt="QR Code" />
+        <img src="${qrCodeImageUrl.url}" alt="QR Code" />
       </div>
     `;
     setBusinessCardBack(businessCardBackHTML);
