@@ -12,7 +12,7 @@ let { data: books, } = await supabase
 
 
   for (let book of books) {
-    console.log(book)
+    //console.log(book)
 
     // const booksTableBody = document.getElementById('booksTableBody');
     // const row = document.createElement('tr');
