@@ -118,15 +118,23 @@ if (selectedTheme.name.includes(' ')) {
   //const rgbColor = hexToRgb("FFFFFF");
   //fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
   fetch(`https://quickchart.io/qr?text=Here's my text`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to fetch QR code');
+    }
+    // Return the URL directly from the Response object
+    return response.url;
+  })
   .then(qrCodeImageUrl => {
     console.log(qrCodeImageUrl);
     // Generate the back side of the business card HTML with the QR code image
     const businessCardBackHTML = `
-      <div id="${selectedTheme.name}" class="business-card-back" ">
-        <img src="${qrCodeImageUrl.url}" alt="QR Code" />
+      <div id="${selectedTheme.name}" class="business-card-back">
+        <img src="${qrCodeImageUrl}" alt="QR Code" />
       </div>
     `;
-    setBusinessCardBack(businessCardBackHTML);
+
+    // Set the HTML for the business card back side using state or any other method you prefer
   })
   .catch(error => {
     console.error('Error generating QR code:', error);
