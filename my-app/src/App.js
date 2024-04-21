@@ -134,7 +134,7 @@ if (selectedTheme.name.includes(' ')) {
       </div>
     `;
 
-    // Set the HTML for the business card back side using state or any other method you prefer
+    setBusinessCardBack(businessCardBackHTML);
   })
   .catch(error => {
     console.error('Error generating QR code:', error);
