@@ -1,5 +1,4 @@
 import './App.css';
-import './data.js'; // Import data.js
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
