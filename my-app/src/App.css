@@ -210,8 +210,8 @@ body {
 
 #Simple{
   color: #000000;
-  background: radial-gradient(
-    circle,
+  background: linear-gradient(
+    to right,
     #7d7d7d 20%,
     #d7d7d7 40%,
     #646464 60%,
