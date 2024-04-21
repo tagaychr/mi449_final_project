@@ -116,7 +116,7 @@ function App() {
   //fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
   //const rgbColor = hexToRgb("FFFFFF");
   //fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${link}&size=100x100&bgcolor=${rgbColor}`)
-  fetch(`https://quickchart.io/qr?text=${link}`)
+  fetch(`https://quickchart.io/qr?text=${link}&light=${selectedTheme.color1}&dark=${selectedTheme.color2}&margin=1`)
   .then(response => {
     if (!response.ok) {
       throw new Error('Failed to fetch QR code');
