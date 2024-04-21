@@ -82,7 +82,8 @@ function App() {
         </div>
         <div class="bottom-half">
           <div class="contact-info">
-              <p>${email} ${number}</p>
+          <p>${email} </p>
+          <p> ${number}</p>
           </div>
           <div class="bio">
               <p><em>${bio}</em></p>
@@ -99,7 +100,8 @@ function App() {
         </div>
         <div class="bottom-half">
           <div class="contact-info">
-          <p>${email} ${number}</p>
+              <p>${email} </p>
+              <p> ${number}</p>
           </div>
           <div class="bio">
               <p><em>${bio}</em></p>
